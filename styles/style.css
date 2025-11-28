@@ -13,4 +13,195 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--Inter), sans-serif;
+  font-variation-settings: "wght" var(--variative-font-text);
+  background-image: var(--img-bg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  background-color: #fff;
+  width: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
+  border: solid #000 2px;
+  padding-block: clamp(7.625rem, 7.4489rem + 0.7512vw, 8.125rem);
+  text-align: center;
+  margin-block: 100px;
+}
+.header_logo {
+  font-family: var(--font-accent);
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  text-transform: uppercase;
+  justify-content: center;
+}
+.header_title {
+  font-family: var(--font-accent);
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  line-height: 1;
+}
+.card {
+  width: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
+  margin: auto;
+  background-color: #fff;
+  margin-block-end: 50px;
+  border: solid 2px #000;
+}
+.card__title {
+  font-family: var(--font-main);
+  font-weight: var(--weight-title);
+  font-size: 18px;
+  padding: 4px 10px;
+}
+.card__img {
+  position: relative;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+.image {
+  inline-size: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: right;
+  display: block;
+}
+.watermark {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  font-family: var(--font-accent);
+  text-shadow: -1 0 var(--color-bg, rgba(255, 255, 255, 1)),
+    0 1px var(--color-bg, rgba(255, 255, 255, 1)),
+    1px 0 var(--color-bg, rgba(255, 255, 255, 1)),
+    0 -1px var(--color-bg, rgba(255, 255, 255, 1));
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 14px;
+  opacity: 50%;
+  mix-blend-mode: hard-light;
+}
+@supports (
+  (text-stroke: 1px var(--color-bg, rgba(255, 255, 255, 1))) or
+    (-webkit-text-stroke: 1px var(--color-bg, rgba(255, 255, 255, 1)))
+) {
+  .watermark {
+    -webkit-text-stroke: 1px var(--color-bg, rgba(255, 255, 255, 1));
+    text-stroke: 1px var(--color-bg, rgba(255, 255, 255, 1));
+    text-shadow: none;
+  }
+}
+.card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  font-family: var(--font-main);
+  font-weight: var(--weight-main);
+  font-size: 18px;
+  padding-inline: 25px;
+  padding-block-start: 25px;
+  line-height: 21px;
+  font-style: normal;
+  letter-spacing: 0%;
+}
+.button {
+  background-color: transparent;
+  margin-block: 25px;
+  cursor: pointer;
+}
+.btn__effect {
+  box-shadow: none;
+  transition: box-shadow 0.3s ease;
+}
+.btn__effect:focus {
+  outline: none;
+  box-shadow: 2px 2px black;
+}
+.buttons {
+  display: flex;
+  justify-content: right;
+  margin-inline-end: 25px;
+}
+.button__text {
+  font-family: var(--font-accent);
+  font-size: 14px;
+  padding-inline: 32px;
+  font-weight: 400;
+  line-height: 90%;
+}
+.card__icon-button {
+  border: none;
+  padding: 7px 12px;
+}
+.grayscale {
+  filter: grayscale(70%);
+}
+.saturate {
+  filter: saturate(500%);
+}
+.hue-rotate {
+  filter: hue-rotate(30deg);
+}
+.invert {
+  filter: invert(100%);
+}
+.sepia {
+  filter: sepia(90%);
+}
+.blur {
+  filter: blur(10px);
+}
+.hue {
+  filter: hue-rotate(90deg) blur(3px) saturate(0.5) contrast(60%)
+    brightness(110%) saturate(180%);
+}
+.button__save {
+  display: flex;
+  justify-content: center;
+}
+.memory-save-button .button__text {
+  padding-inline: 0;
+}
+.memory-save-button {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 20px 20px;
+  border: 2px solid #000;
+  margin-block-end: 10px;
+}
+.popup {
+  max-inline-size: 353px;
+  padding: 30px;
+}
+
+.content__popup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.popup__text {
+  font-family: var(--font-accent);
+  font-size: 14px;
+  line-height: 1.5;
+  flex: 1;
+}
+.popup__icon {
+  margin-block: 12px;
+}
+.form {
+  padding-block-start: 30px;
+}
+.popup__close {
+  padding-block-start: 12.5px;
+  padding-block-end: 12.5px;
+  text-transform: uppercase;
+  inline-size: 100%;
+  background-color: transparent;
+}
+@media (width <= 375px) {
+  .memory-save-button {
+    min-height: 84px;
+  }
 }
