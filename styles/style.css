@@ -104,6 +104,24 @@
   font-style: normal;
   letter-spacing: 0%;
 }
+.card__like-button {
+  position: relative;
+  overflow: hidden;
+}
+.card__like-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+}
+.card__like-button:hover::before {
+  transform: translateX(0%);
+}
 .button {
   background-color: transparent;
   margin-block: 25px;
@@ -128,10 +146,32 @@
   padding-inline: 32px;
   font-weight: 400;
   line-height: 90%;
+  z-index: 1;
+  position: relative;
+  color: #fff;
+  mix-blend-mode: difference;
 }
 .card__icon-button {
-  border: none;
-  padding: 7px 12px;
+  border: 2px solid transparent;
+  block-size: 38px;
+  inline-size: 38px;
+  padding: 0;
+
+  transition: border 0.3s ease;
+}
+.like-icon {
+  block-size: 36px;
+  inline-size: 39px;
+  cursor: pointer;
+  transform-origin: center;
+  overflow: visible;
+  padding-inline-end: 8px;
+}
+.card__icon-button:focus {
+  outline: none;
+}
+.card__icon-button:focus-visible {
+  border-color: #000;
 }
 .grayscale {
   filter: grayscale(70%);
@@ -169,6 +209,28 @@
   padding: 20px 20px;
   border: 2px solid #000;
   margin-block-end: 10px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.icon {
+  position: relative;
+  mix-blend-mode: difference;
+  color: #fff;
+}
+.memory-save-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+}
+.memory-save-button:hover::before {
+  transform: translateX(0%);
 }
 .popup {
   max-inline-size: 353px;
@@ -199,7 +261,71 @@
   text-transform: uppercase;
   inline-size: 100%;
   background-color: transparent;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
 }
+.popup__close::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+}
+.popup__close:hover::before {
+  transform: translateX(0%);
+}
+.sparks {
+  opacity: 0;
+}
+.contour {
+  transition: fill 0.1s 0s linear;
+}
+.core {
+  transition: fill 0.3s 0.03s linear;
+}
+.like-icon:hover .core {
+  fill: var(--contour-color);
+  transition: 0.3s linear 0s;
+}
+.like-icon:active .core {
+  fill: var(--animation-fill-color);
+  transition: 0.3s linear 0s;
+}
+.main-body {
+  transition: fill linear 0.3s 0s;
+}
+.like-icon:hover .main-body {
+  fill: var(--contour-color);
+  transition: 0.3s linear 0.05s;
+}
+.like-icon:active .main-body {
+  fill: var(--animation-fill-color);
+  transition: 0.3s linear 0.05s;
+}
+.like-icon.is-liked .core {
+  fill: var(--animation-fill-color);
+  transition: 0.3s linear 0s;
+}
+.like-icon.is-liked .main-body {
+  fill: var(--animation-fill-color);
+  transition: 0.3s linear 0.05s;
+}
+.like-icon.is-liked .contour {
+  fill: var(--animation-fill-color);
+  transition: 0.3s linear 0.06s;
+}
+.like-icon.is-liked .heart {
+  animation: scaleHeart 0.3s ease-in 0.1s;
+}
+.like-icon.is-liked .sparks{
+  animation:opacitySparks 0.3s ease-in 0.3s;
+}
+
 @media (width <= 375px) {
   .memory-save-button {
     min-height: 84px;

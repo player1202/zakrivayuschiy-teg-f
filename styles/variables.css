@@ -19,4 +19,6 @@
       transparent 4px
     ),
     linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
+    --contour-color:#000;
+    --animation-fill-color:#ff0000;
 }
