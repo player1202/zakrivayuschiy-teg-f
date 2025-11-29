@@ -1,7 +1,7 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
-  --font-main: "Inter-Variable";
-  --font-accent: "PressStart2P";
+  --font-main: "Inter", sans-serif;
+  --font-accent: "PressStart2P", monospace;
   --weight-main: 410;
   --weight-title: 715;
   --img-bg: repeating-linear-gradient(
@@ -19,6 +19,7 @@
       transparent 4px
     ),
     linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
-    --contour-color:#000;
-    --animation-fill-color:#ff0000;
+  --contour-color: #000;
+  --animation-fill-color: #ff0000;
+  --color-blend: rgba(255, 255, 255, 1);
 }
