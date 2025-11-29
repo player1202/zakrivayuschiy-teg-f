@@ -274,11 +274,11 @@
   cursor: pointer;
   outline: none;
 }
-.button__icon{
+.button__icon {
   max-width: 21px;
   height: auto;
   mix-blend-mode: difference;
-  color:#fff;
+  color: #fff;
 }
 .popup__close::before {
   content: "";
@@ -348,5 +348,8 @@
   }
   .popup__close {
     margin-inline: 40px;
+  }
+  .popup {
+    max-inline-size: 306px;
   }
 }
