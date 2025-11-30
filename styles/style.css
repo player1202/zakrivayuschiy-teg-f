@@ -268,8 +268,6 @@
   padding-block-start: 30px;
 }
 .popup__close {
-  padding-block-start: 12.5px;
-  padding-block-end: 12.5px;
   text-transform: uppercase;
   inline-size: 100%;
   background-color: transparent;
@@ -277,7 +275,7 @@
   overflow: hidden;
   cursor: pointer;
   border: 2px solid black;
-
+  height: 38px;
 }
 .button__icon {
   max-width: 21px;
@@ -349,7 +347,7 @@
 
 @media (width <= 376px) {
   .popup {
-    padding-inline:40px;
+    padding-inline: 40px;
     overflow: hidden;
   }
   .memory-save-button {
@@ -358,8 +356,5 @@
   }
   .button__text-save {
     padding-block-start: 2px;
-  }
-  .popup__close{
-    padding-block:8px;
   }
 }
