@@ -100,7 +100,7 @@
   flex-direction: column;
   gap: 26px;
   font-family: var(--font-main), sans-serif;
-  font-variation-settings: "wght" var(--weight-title);
+  font-variation-settings: "wght" var(--weight-main);
   font-size: 18px;
   padding-inline: 25px;
   padding-block-start: 25px;
