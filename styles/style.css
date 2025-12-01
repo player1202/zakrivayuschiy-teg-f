@@ -113,7 +113,7 @@
   overflow: hidden;
   inline-size: 130px;
 }
-.card__like-button::before {
+.btn__effect::before {
   content: "";
   position: absolute;
   top: 0;
@@ -124,7 +124,7 @@
   transform: translateX(-100%);
   transition: transform 0.5s ease-in-out;
 }
-.card__like-button:hover::before {
+.btn__effect:hover::before {
   transform: translateX(0%);
 }
 .button {
@@ -132,13 +132,13 @@
   border: 2px solid black;
   cursor: pointer;
 }
-
 .btn__effect {
   box-shadow: none;
   transition: box-shadow 0.3s ease;
 }
 .btn__effect:focus {
-  outline: solid 1px #000;
+  outline: none;
+  box-shadow: 2px 2px #000;
 }
 .buttons {
   display: flex;
@@ -162,14 +162,14 @@
   inline-size: 38px;
   margin-inline-end: 6px;
   outline: none;
-  transition: border 0.3s ease;
 }
 .like-icon {
-  block-size: 36px;
-  inline-size: 39px;
+
   cursor: pointer;
   transform-origin: center;
   overflow: visible;
+  transition: border-color 0.3s ease;
+
 }
 
 .card__icon-button:focus {
@@ -210,39 +210,18 @@
   display: flex;
   justify-content: center;
 }
-.memory-save-button .button__text {
-  padding-inline: 0;
-}
+
 .memory-save-button {
   display: flex;
-  gap: 8px;
   align-items: center;
-  padding: 15px 20px 13px;
+  padding: 14px 17px 14px;
   border: 2px solid #000;
   margin-block-end: 10px;
   position: relative;
   overflow: hidden;
   cursor: pointer;
 }
-.icon {
-  position: relative;
-  mix-blend-mode: difference;
-  color: #fff;
-}
-.memory-save-button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #000;
-  transform: translateX(-100%);
-  transition: transform 0.5s ease-in-out;
-}
-.memory-save-button:hover::before {
-  transform: translateX(0%);
-}
+
 .popup {
   max-inline-size: 353px;
   padding: 30px;
@@ -278,25 +257,11 @@
   height: 38px;
 }
 .button__icon {
-  max-width: 21px;
-  height: auto;
   mix-blend-mode: difference;
   color: #fff;
+  padding-inline-end: 8px;
 }
-.popup__close::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #000;
-  transform: translateX(-100%);
-  transition: transform 0.5s ease-in-out;
-}
-.popup__close:hover::before {
-  transform: translateX(0%);
-}
+
 .sparks {
   opacity: 0;
 }
@@ -348,13 +313,15 @@
 @media (width <= 376px) {
   .popup {
     padding-inline: 40px;
-    overflow: hidden;
   }
   .memory-save-button {
     flex-direction: column;
-    padding: 20px 16px;
+   
   }
-  .button__text-save {
-    padding-block-start: 2px;
+  .button__icon {
+    margin-inline-start: 7px;
+    padding-block-end:11px;
+    width: 38px;
+    height: 38px;
   }
 }
